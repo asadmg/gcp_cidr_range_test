@@ -29,12 +29,10 @@ gcp_networks_to_avoid =\
 candidate_networks = ['10.21.0.0/23', '172.16.140.0/23']
 
 for network_to_test in candidate_networks:
-
-    print(f"testing {network_to_test}")
+    print(f"****** Testing {network_to_test} ******")
+    test_network = ipaddress.ip_network(network_to_test)
 
     for gcp_exclusion_network in gcp_networks_to_avoid:
-
         gcp_network = ipaddress.ip_network(gcp_exclusion_network)
-        test_network = ipaddress.ip_network(network_to_test)
         result = test_network.overlaps(gcp_network)
         print(f"{test_network} is in {gcp_network} : {result}")
