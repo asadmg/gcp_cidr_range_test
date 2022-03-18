@@ -26,7 +26,7 @@ gcp_networks_to_avoid =\
 
 
 # candidate CIDR blocks to be tested if they exist within GCP networks to avoid
-candidate_networks = ['10.21.0.0/23', '172.16.140.0/23']
+candidate_networks = ['10.21.0.0/23', '172.16.140.0/23', '10.0.0.0/24']
 
 for network_to_test in candidate_networks:
     print(f"****** Testing {network_to_test} ******")
